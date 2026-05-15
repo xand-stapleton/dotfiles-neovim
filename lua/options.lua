@@ -24,6 +24,3 @@ opt.laststatus = 2
 opt.showmode = false
 
 opt.wildmode = { "longest", "list", "full" }
-
--- Powerline / gutentags status
-opt.statusline:append("%{gutentags#statusline()}")
