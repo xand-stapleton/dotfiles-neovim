@@ -1,0 +1,32 @@
+# Cache and runtime files
+.netrwhist
+*.swp
+*.swo
+*~
+.DS_Store
+tags
+
+# Plugin manager and dependencies
+pack/*/start/*/
+pack/*/opt/*/
+
+# Neovim shada history
+shada/
+*.shada
+
+# Backup and swap files
+backups/
+*.bak
+
+# LSP and diagnostic cache
+.cache/
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.log
+
+# Local/personal overrides (if using local config)
+local.lua
+init.local.lua
+
