@@ -6,7 +6,8 @@ vim.opt.completeopt = "menu,menuone,noselect,popup,fuzzy" -- Ensures the menu ap
 vim.o.autocomplete = true -- Enables the overall completion feature.
 -- The 'complete' option specifies the sources for completion. 'o' includes
 -- omni-completion (LSP), and 'f' includes file name completion.
-vim.opt.complete = { 'o', 'f' }
+-- vim.opt.complete = { 'o', 'f' }
+vim.opt.complete = { 'o' }
 
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("lsp_completion", { clear = true }),
@@ -33,8 +34,13 @@ vim.o.pummaxwidth = 40
 -- Diagnostics mappings
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "]d", function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Go to next diagnostic" })
+
+vim.keymap.set("n", "[d", function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Go to previous diagnostic" })
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, opts)
 
