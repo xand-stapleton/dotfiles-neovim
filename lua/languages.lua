@@ -25,19 +25,14 @@ autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
--- Python word movement around underscores
-autocmd("FileType", {
-  pattern = "python",
-  callback = function()
-    vim.opt_local.iskeyword:append("^_")
-  end,
-})
+-- -- Python word movement around underscores
+-- autocmd("FileType", {
+--   pattern = "python",
+--   callback = function()
+--     vim.opt_local.iskeyword:append("^_")
+--   end,
+-- })
 
--- Fix syntax issue induced by iskeyword change
-autocmd("FileType", {
-  pattern = "python",
-  command = "syntax iskeyword @,48-57,_,192-255,$,-",
-})
 
 -- Fortran tab highlight
 vim.g.fortran_have_tabs = 1
@@ -51,13 +46,13 @@ autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
--- Wrapped movement on Python files
-autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.py", "*.pyw" },
-  callback = function()
-    vim.opt_local.whichwrap:append({ "<", ">", "h", "l" })
-  end,
-})
+-- -- Wrapped movement on Python files
+-- autocmd({ "BufRead", "BufNewFile" }, {
+--   pattern = { "*.py", "*.pyw" },
+--   callback = function()
+--     vim.opt_local.whichwrap:append({ "<", ">", "h", "l" })
+  -- end,
+-- })
 
 -- Ruff
 local python_ruff = augroup("PythonRuff", { clear = true })

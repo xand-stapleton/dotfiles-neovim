@@ -30,3 +30,5 @@ backups/
 local.lua
 init.local.lua
 
+
+nvim-pack-lock.json

@@ -56,6 +56,7 @@ keymap("n", "<Leader>b", ":Buffers<CR>", opts)
 keymap("n", "<Leader>f", ":Files<CR>", opts)
 keymap("n", "<Leader>g", ":GitFiles<CR>", opts)
 keymap("n", "<Leader>r", ":RG<CR>", opts)
+keymap("n", "<Leader>h", ":History<CR>", opts)
 
 -- Spell check
 keymap("n", "<leader>o", ":setlocal spell! spelllang=en_gb<CR>", { remap = true, silent = true })

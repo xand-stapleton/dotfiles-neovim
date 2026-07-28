@@ -11,7 +11,7 @@ This configuration provides:
 - **Plugin Management**: Via vim.pack with plugins including vim-fugitive, fzf.vim, vimtex, and more
 - **Language Support**: Specialized settings for Python, C/C++, TeX, Fortran, and Go
 - **Custom UI**: Custom status line and tab line without external dependencies
-- **Snippets**: UltiSnips integration with ready-to-use templates for multiple languages
+- **Snippets**: LuaSnip integration with TeX, Markdown, Go, Lean, and Mathlib templates
 
 ## File Structure
 
@@ -27,14 +27,16 @@ This configuration provides:
 - **colours.lua** - Color scheme (gruvbox-material) and appearance settings
 - **autocmds.lua** - Automatic commands for relative line numbers, fold preservation, and TODO highlighting
 - **languages.lua** - Language-specific settings for Python, C, TeX, Fortran, Go, and more
-- **plugins.lua** - Configuration for Tagbar, Vimtex, UltiSnips, and Gutentags plugins
+- **plugins.lua** - Configuration for Tagbar, Vimtex, LuaSnip, and Gutentags plugins
 - **statusline.lua** - Custom status line with mode indicator, git branch, and file info
 - **tabline.lua** - Custom tab line display and navigation
 
-### Snippets (UltiSnips/)
-- **go.snippets** - Go language code templates
-- **markdown.snippets** - Markdown document snippets
-- **tex.snippets** - LaTeX document snippets
+### Snippets (luasnip/)
+
+- **go.lua** - Go language code templates
+- **markdown.lua** - Markdown document snippets
+- **tex.lua** - LaTeX document and maths snippets
+- **lean.lua** - Lean 4 and Mathlib starter snippets
 
 ## Key Features
 
@@ -46,7 +48,7 @@ This configuration provides:
 - nvim-lspconfig - LSP client configuration
 - tagbar - Symbol browser
 - fzf.vim - Fuzzy finder
-- ultisnips - Snippet engine
+- LuaSnip - Snippet engine
 - vim-polyglot - Language syntax support
 - vimtex - LaTeX support
 - vim-commentary - Comment toggling
@@ -57,6 +59,7 @@ This configuration provides:
 - **C/C++** - 4-space indentation, 79-char column guide
 - **TeX/LaTeX** - Soft wrapping, xelatex compilation via latexmk, Skim viewer (macOS)
 - **Go** - Template snippets, custom filetypes (.tmpl)
+- **Lean** - Lean 4 declaration/proof snippets and a small Mathlib starter set
 - **Fortran** - Tab character highlighting
 
 ### Custom Key Bindings
@@ -91,6 +94,13 @@ This configuration provides:
 - `<Leader>T` - Toggle Tagbar symbol browser
 - `<Leader>s` - Search and replace word under cursor
 - `<Leader>o` - Toggle spell check (en_gb)
+
+#### Snippets
+
+- `<Tab>` - Expand a snippet or jump to its next field
+- `<S-Tab>` - Jump to the previous snippet field
+- `<C-E>` - Cycle the active choice
+- Visual `<Tab>` - Store/cut selected text for the next selection-aware snippet
 
 #### Text Objects & Selection
 - `ci_` - Change inside underscores
