@@ -86,3 +86,7 @@ end, {
 
 -- Gutentags
 vim.g.gutentags_ctags_exclude_dir = {}
+
+
+-- Lean.nvim
+vim.g.lean_config = { mappings = true }

@@ -13,6 +13,7 @@ vim.pack.add({
   'https://github.com/folke/tokyonight.nvim.git',
   'https://github.com/junegunn/fzf.vim.git',
   -- 'https://github.com/tpope/vim-rhubarb.git',
+  "https://github.com/Julian/lean.nvim",
   'https://github.com/will133/vim-dirdiff.git',
   'https://github.com/sheerun/vim-polyglot.git',
   'https://github.com/tpope/vim-unimpaired.git',
